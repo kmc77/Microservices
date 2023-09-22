@@ -13,4 +13,12 @@ zuul:
     second-service:
       path: /first-service/**
       url: http://localhost:8082 
+      
+logging:
+  level:
+    root: info
+    com:
+      example:
+        demo:
+          filter: info      
      

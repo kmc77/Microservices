@@ -11,39 +11,46 @@ import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 
 
+
 @Component
-public class ZullFilterImple extends ZuulFilter {
+public class ZullFilterImple extends ZuulFilter{
+
 	
-	private static final Logger logger = LoggerFactory.getLogger(ZullFilterImple.class);
+	private static final Logger logger = LoggerFactory.getLogger(ZullFilterImple.class);	
 	//필터로 사용하겠다고 설정
 	@Override
 	public boolean shouldFilter() {
+		// TODO Auto-generated method stub
 		return true;
 	}
+
 	
+	//필터가 수행할 기능을 이 메서드에 작성합니다.
 	@Override
 	public Object run() throws ZuulException {
-		logger.info("======== Object run()1 ========");
+		logger.info("========= Object run()1 ============");
 		RequestContext ctx = RequestContext.getCurrentContext();
 		HttpServletRequest request = ctx.getRequest();
 		logger.info(request.getRequestURI());
-		logger.info("======== Object run()2 ========");
-		
+		logger.info("========= Object run()2 ============");
+
 		return null;
 	}
 
-
 	@Override
-	//필터의 타입을 정의하는 메서드입니다.
+	//필터의 타입을 정의하는 메서드입니다
 	public String filterType() {
 		// TODO Auto-generated method stub
-		return "pre"; //사전 라우팅 필터링을 위한 "pre"
+		return "pre";    //사전 라우팅 필터링을 위한 "pre" 
 	}
 
 	@Override
 	public int filterOrder() {
 		// TODO Auto-generated method stub
-		return 1; //작은 값이 우선권을 가집니다.
+		return 1;  //작은 값이 우선권을 가집니다.
 	}
 
+
+
 }
+

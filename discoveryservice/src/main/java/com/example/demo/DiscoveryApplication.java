@@ -1,0 +1,16 @@
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+
+
+@SpringBootApplication
+@EnableEurekaServer //유레가 서버 작동하기 위해 사용
+public class DiscoveryApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DiscoveryApplication.class, args);
+	}
+
+}
